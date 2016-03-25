@@ -1,0 +1,7 @@
+#!/bin/sh 
+
+echo "--------------------------"
+echo "Start checking pep 8 style"
+echo "--------------------------"
+
+pep8 .
