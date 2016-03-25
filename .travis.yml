@@ -1,0 +1,16 @@
+language: python
+
+python:
+    - 3.3
+    - 3.4
+    - 3.5
+
+install:
+    - pip install -r requirements/develop.txt 
+
+script:
+    - pep8
+
+notifications:
+      slack: manducku:WDEqRE05wUxSxz2CktbYyp1f
+
