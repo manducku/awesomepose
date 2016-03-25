@@ -3,7 +3,7 @@
 
 ##contribute 
 
-Before contribute to [AWESOMEPOSE]("https://github.com/manducku/awesomepose"), 
+Before contribute to [AWESOMEPOSE]("https://github.com/manducku/awesomepose")
 
 should add pre commit to git hook 
 
