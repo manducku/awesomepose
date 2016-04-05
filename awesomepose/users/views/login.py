@@ -1,19 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from users.forms import LoginForm, SignupForm
-from django.views.generic import View
+from django.views.generic import TemplateView
 from django.contrib import messages
 
 
-class LoginView(View):
-    def get(self, request):
-        template_name = "users/login.html"
-
-        return render(
-                request,
-                template_name,
-                context={},
-                )
+class LoginView(TemplateView):
+    template_name = "users/login.html"
 
     def post(self, request):
         email = request.POST.get("email")
