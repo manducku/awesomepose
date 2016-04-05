@@ -1,14 +1,11 @@
 from django.conf import settings
-from django.contrib.auth.models import check_password
-from user.models import User
+from django.contrib.auth.hashers import check_password
+from users.models import User
 
 
 class EmailAuthBackend(object):
 
     def authenticate(self, email=None, password=None):
-        """
-        Authentication method
-        """
         try:
             user = User.objects.get(email=email)
             if user.check_password(password):

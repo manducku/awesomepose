@@ -1,3 +1,3 @@
 from .signup import signup
-from .login import login
+from .login import LoginView
 from .welcome import WelcomeView
