@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from users.forms import LoginForm, SignupForm
 from django.views.generic import View
+from django.contrib import messages
 
 
 class LoginView(View):
@@ -23,30 +24,8 @@ class LoginView(View):
                 )
 
         if user:
+            messages.success(request, '로그인에 성공하였습니다.')
             login(request, user)
             return redirect(next_page_url)
-
+        messages.warning(request, '비밀번호가 틀렸습니다')
         return redirect('login')
-
-
-"""
-def login(request):
-    if request.method == 'POST':
-        form = LoginForm(data=request.POST)
-        if form.is_valid():
-            user = authenticate(email=request.POST['email'], password=request.POST['password'])
-            if user is not None:
-                if user.is_active:
-                    (request, user)
-                    return redirect('welcome')
-    else:
-        form = LoginForm()
-
-    return render(
-            request,
-            'users/login.html',
-            {
-                'form': form,
-            }
-          )
-"""
