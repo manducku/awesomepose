@@ -10,7 +10,7 @@
       <div class = "col-lg-6 col-lg-offset-3">
        <div class = "page-header">
            <legend>
-               <h1 id="forms"> Sign Up</h1>
+               <h1 id="forms"> 회원 가입</h1>
            </legend>
         <form class="form-horizontal" action="{% url 'sign-up' %}" method="POST">
           {% csrf_token %}
@@ -18,13 +18,13 @@
             <div class="form-group">
               <label for="inputEmail" class="col-lg-3 control-label">이메일</label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" id="inputEmail" name="email" placeholder="이메일" required>
+                <input type="text" class="form-control" id="inputEmail" name="email" placeholder="ex) abc@example.com" required>
               </div>
             </div>
             <div class="form-group">
-              <label for="inputnickname" class="col-lg-3 control-label">닉네임</label>
+              <label for="inputnickname" class="col-lg-3 control-label">아이디</label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" id="inputEmail" name="nickname" placeholder="닉네임" required>
+                <input type="text" class="form-control" id="inputEmail" name="nickname" placeholder="아이디" required>
               </div>
             </div>
 
