@@ -63,3 +63,13 @@ target/
 
 #.env 
 .env
+
+#migrations
+awesomepose/users/migrations/
+
+#bower
+bower.*
+bower_components/
+
+#db
+awesomepose/db.sqlite3
