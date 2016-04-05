@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'signup/', SignupView.as_view(), name="sign-up"),
     url(r'login/', LoginView.as_view(), name="login"),
     url(r'welcome/', WelcomeView.as_view(), name="welcome"),
+    url(r'logout/', LogoutView.as_view(), name="logout"),
 ]
