@@ -8,13 +8,23 @@
 </head>
 <body>
 
-    {% include "partials/header.html" %}
+{% include "partials/header.html" %}
    
-    <section id = "content"> 
-            {% block content %}
-            {% endblock %}
-    </section>
+  <section class="content">
+   <div class="container">
 
-    {% include "partials/footer.html" %} 
-</body>
+    {% block content %}
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1>Cosmo</h1>
+            <p class="lead">An ode to Metro</p>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+   </div>
+  </section>
+   {% include "partials/footer.html" %}
+ </body>
 </html>

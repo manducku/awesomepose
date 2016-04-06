@@ -1,48 +1,43 @@
-<!DOCTYPE html>
-<html lang="kor">
-  <head>
-    <!-- Link to the Bootstrap CSS from a CDN -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
-          rel="stylesheet">
-  </head>
-  <body>
-      {% load get_twitter_bootstrap_alert_msg_css_name %}
-      <div class = "col-lg-6 col-lg-offset-3">
-       <div class = "page-header">
-           <legend>
-               <h1 id="forms"> 로그인</h1>
-           </legend>
-        <form class="form-horizontal" action="{% url "login" %}" method="post">
-          {% csrf_token %}
-          <fieldset>
-            <div class="form-group">
-              <label for="inputEmail" class="col-lg-3 control-label">이메일</label>
-              <div class="col-lg-8">
-                <input type="text" class="form-control" id="inputEmail" placeholder="ex) abc@example.com" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword" class="col-lg-3 control-label">비밀번호</label>
-              <div class="col-lg-8">
-                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호" required>
-              </div>
-            </div>
-		    <div class="form-group">
-                <div class="col-lg-2 col-lg-offset-9">
-                    <button type="submit" class="btn btn-primary btn-block" value="login">로그인</button>
+{% extends "base.html" %}
+{% block content %}
+        <div class= "row">
+          {% load get_twitter_bootstrap_alert_msg_css_name %}
+          <div class = "col-lg-6 col-lg-offset-3">
+           <div class = "page-header">
+               <legend>
+                   <h1 id="forms"> 로그인</h1>
+               </legend>
+            <form class="form-horizontal" action="{% url "login" %}" method="post">
+              {% csrf_token %}
+              <fieldset>
+                <div class="form-group">
+                  <label for="inputEmail" class="col-lg-3 control-label">이메일</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="ex) abc@example.com" required>
+                  </div>
                 </div>
-            </div>
-            <div class="form-group">
-                {% for message in messages %}
-                    {% get_twitter_bootstrap_alert_msg_css_name message.tags as alert_tag %}
-                    <span class="help-block col-lg-8 col-lg-offset-3  alert alert-{{ alert_tag }}">
-                        {{ message }}
-                    </span> 
-                {% endfor %}
-            </div>
-          </fieldset>
-        </form>
-       </div>
-      </div>
-  </body>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-lg-3 control-label">비밀번호</label>
+                  <div class="col-lg-8">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2 col-lg-offset-9">
+                        <button type="submit" class="btn btn-primary btn-block" value="login">로그인</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {% for message in messages %}
+                        {% get_twitter_bootstrap_alert_msg_css_name message.tags as alert_tag %}
+                        <span class="help-block col-lg-8 col-lg-offset-3  alert alert-{{ alert_tag }}">
+                            {{ message }}
+                        </span> 
+                    {% endfor %}
+                </div>
+              </fieldset>
+            </form>
+           </div>
+          </div>
+{% endblock %}
 </html>

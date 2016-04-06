@@ -1,4 +1,9 @@
 @import "bootstrap/variables";
 @import "theme/variables";
-@import "bootstrap";
+@import "bootstrap-custom";
 @import "theme/bootswatch";
+
+.content {
+    padding-top:50px;
+}
+
