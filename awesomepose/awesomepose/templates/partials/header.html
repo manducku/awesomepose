@@ -2,12 +2,12 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="../" class="navbar-brand">Awesome pose</a>
+            <a href="{% url 'home' %}" class="navbar-brand">Awesome pose</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href=""target="">마이 페이지</a></li>
-            <li><a href="" target="">로그인</a></li>
+              <li><a href=""target="">마이 페이지</a></li>
+              <li><a href="{% url 'login' %}" target="">로그인</a></li>
           </ul>
         </div>
       </div>
