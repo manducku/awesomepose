@@ -94,3 +94,6 @@ awesomepose/awesomepose/static/scss/_bootstrap.scss
 
 #sass cash
 .sass-cache
+
+#map
+*.map
