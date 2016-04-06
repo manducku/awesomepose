@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                     'srcPrefix': 'bower_components/bootswatch-sass'
                 },
                 files: {
-                    'awesomepose/static/scss/theme' : 'lumen'
+                    'awesomepose/static/scss/theme' : 'cosmo'
                 }
             },
             // jQuery를 프로젝트 폴더/js 밑으로 복사
