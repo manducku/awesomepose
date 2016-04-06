@@ -73,3 +73,22 @@ bower_components/
 
 #db
 awesomepose/db.sqlite3
+
+#node_module
+awesomepose/node_modules/
+
+#json
+*.json
+
+#static font, bootstrap
+awesomepose/static/font
+awesomepose/scss/bootstrap
+awesomepose/scss/theme
+awesomepose/scss/_bootstrap-compass.scss
+awesomepose/scss/_bootstrap-custom.scss
+awesomepose/scss/_bootstrap-mincer.scss
+awesomepose/scss/_bootstrap-sprockets.scss
+awesomepose/scss/_bootstrap.scss
+
+#sass cash
+.sass-cache
