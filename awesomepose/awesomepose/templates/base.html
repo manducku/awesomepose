@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/application.css' %}">
+    <title>{% block title %}{% endblock %} | 어썸포즈 </title>
+</head>
+<body>
+
+{% include "partials/header.html" %}
+   
+  <section class="content">
+   <div class="container">
+
+    {% block content %}
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1>Cosmo</h1>
+            <p class="lead">An ode to Metro</p>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+   </div>
+  </section>
+   {% include "partials/footer.html" %}
+ </body>
+</html>

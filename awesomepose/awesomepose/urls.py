@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from users.views import *
+from awesomepose.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', HomeView.as_view(), name="home"),
     url(r'signup/', SignupView.as_view(), name="sign-up"),
     url(r'login/', LoginView.as_view(), name="login"),
     url(r'welcome/', WelcomeView.as_view(), name="welcome"),
