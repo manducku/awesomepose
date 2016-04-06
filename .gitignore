@@ -97,3 +97,6 @@ awesomepose/awesomepose/static/scss/_bootstrap.scss
 
 #map
 *.map
+
+#swp
+*.swp
