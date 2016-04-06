@@ -26,6 +26,7 @@ class SignupView(TemplateView):
                     password=password1,
                     nickname=nickname,
                     )
+            user.set_password(password1)
             if created:
                 return redirect("welcome")
             else:

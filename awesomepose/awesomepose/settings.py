@@ -124,5 +124,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # User overiding
-AUTH_USER_MODEL = 'users.User'
 AUTHENTICATION_BACKENDS = ['users.backends.EmailAuthBackend', ]
+AUTH_USER_MODEL = 'users.User'
