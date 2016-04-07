@@ -42,6 +42,19 @@
                     <button type="submit" class="btn btn-primary btn-block" value="login">회원가입</button>
                 </div>
             </div>
+			<div class="form-group">
+                <div class="col-lg-6">
+                    <a class="btn btn-block btn-social btn-facebook">
+                            <span class="fa fa-facebook"></span> Sign Up with Facebook 
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="btn btn-block btn-social btn-google">
+                            <span class="fa fa-google"></span> Sign Up with Google 
+                    </a>
+                </div>
+            </div>
+
             <div class="form-group">
                 {% for message in messages %}
                     {% get_twitter_bootstrap_alert_msg_css_name message.tags as alert_tag %}
