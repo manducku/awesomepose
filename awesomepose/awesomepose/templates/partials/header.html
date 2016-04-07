@@ -5,10 +5,19 @@
             <a href="{% url 'home' %}" class="navbar-brand">Awesome pose</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
+
+          {% if request.user.is_authenticated %}
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href=""target="">{{request.user.nickname}}</a></li>
+                <li><a href="" target="">마이 페이지</a></li>
+                <li><a href="{% url 'logout' %}" target="">로그아웃 </a></li>
+          </ul>  
+          {% else %}
           <ul class="nav navbar-nav navbar-right">
-              <li><a href=""target="">마이 페이지</a></li>
+              <li><a href="{% url 'sign-up' %}" target="">회원가입</a></li>
               <li><a href="{% url 'login' %}" target="">로그인</a></li>
           </ul>
+          {% endif %}
         </div>
       </div>
     </div>

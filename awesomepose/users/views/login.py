@@ -17,10 +17,9 @@ class LoginView(TemplateView):
                 email=email,
                 password=password,
                 )
-
-        if user:
-            messages.success(request, '로그인에 성공하였습니다.')
-            login(request, user)
-            return redirect(next)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect(next)
         messages.warning(request, '비밀번호가 틀렸습니다')
         return redirect('login')
