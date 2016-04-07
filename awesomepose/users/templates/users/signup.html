@@ -44,12 +44,12 @@
             </div>
 			<div class="form-group">
                 <div class="col-lg-6">
-                    <a class="btn btn-block btn-social btn-facebook">
+                    <a href="{% url 'social:begin' backend='facebook' %}?next={{ request.path }}" class="btn btn-block btn-social btn-facebook">
                             <span class="fa fa-facebook"></span> Sign Up with Facebook 
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a class="btn btn-block btn-social btn-google">
+                    <a href="{% url 'social:begin' 'google' %}?next={{ request.path }}" class="btn btn-block btn-social btn-google">
                             <span class="fa fa-google"></span> Sign Up with Google 
                     </a>
                 </div>
