@@ -124,5 +124,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # User overiding
-AUTHENTICATION_BACKENDS = ['users.backends.EmailAuthBackend', ]
+AUTHENTICATION_BACKENDS = ['users.backends.EmailAuthBackend',
+                           'django.contrib.auth.backends.ModelBackend',
+                           ]
+
 AUTH_USER_MODEL = 'users.User'

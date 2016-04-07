@@ -21,13 +21,12 @@ class SignupView(TemplateView):
 
         else:
             User = get_user_model()
-            user, created = User.objects.get_or_create(
+            user = User.objects.create_user(
                     email=email,
                     password=password1,
                     nickname=nickname,
                     )
-            user.set_password(password1)
-            if created:
+            if user:
                 return redirect("welcome")
             else:
                 messages.warning(request, '아이디 또는  이메일이 올바르지 않습니다. 다시 입력 부탁드립니다.')
