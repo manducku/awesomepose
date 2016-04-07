@@ -133,19 +133,21 @@ STATIC_URL = '/static/'
 AUTHENTICATION_BACKENDS = [
                            'social.backends.facebook.FacebookOAuth2',
                            'users.backends.EmailAuthBackend',
+                           'social.backends.google.GoogleOAuth2',
                            ]
 
 AUTH_USER_MODEL = 'users.User'
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/welcome/'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 # Facebook
 SOCIAL_AUTH_FACEBOOK_KEY = '941563239291660'
 SOCIAL_AUTH_FACEBOOK_SECRET = '881ed1e6343500a4bc54b95fd232e923'
 # Google
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '57027729005-509fcr0nr397jn62g9vu78dk8490gmle.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Q-E9Xv5estDRqATunPgzBOtd'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 FACEBOOK_EXTENDED_PERMISSIONS = ['email', 'picture']
