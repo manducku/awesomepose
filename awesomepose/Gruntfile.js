@@ -19,7 +19,7 @@ module.exports = function(grunt) {
                 files: {
                     'awesomepose/static/js/bootstrap' : 'javascripts',
                     'awesomepose/static/fonts/bootstrap' : 'fonts',
-                    'awesomepose/static/scss' : 'stylesheets'
+                    'awesomepose/static/scss/bootstrap' : 'stylesheets'
                 }
             },
             bootstrap_theme :{
@@ -37,6 +37,23 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'awesomepose/static/js/jquery': 'jquery/dist',
+                }
+            },
+            bootstrap_social:{
+                options: {
+                    'srcPrefix': 'bower_components/bootstrap-social'
+                },
+                files: {
+                    'awesomepose/static/scss/social' : 'bootstrap-social.scss',
+                }
+            },
+            font_awesome:{
+                options: {
+                    'srcPrefix': 'bower_components/font-awesome'
+                },
+                files: {
+                    'awesomepose/static/fonts' : 'fonts',
+                    'awesomepose/static/scss/font-awesome' : 'scss',
                 }
             },
         },

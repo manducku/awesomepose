@@ -1,8 +1,9 @@
-@import "bootstrap/variables";
+@import "bootstrap/bootstrap/variables";
 @import "theme/variables";
-@import "bootstrap-custom";
+@import "bootstrap/bootstrap_custom";
 @import "theme/bootswatch";
-
+@import "font-awesome/font-awesome";
+@import "social/bootstrap-social";
 .content {
     padding-top:50px;
 }
