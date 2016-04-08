@@ -16,7 +16,7 @@
       {% for post in posts %}
           <div class="col-lg-4">
             <div class="thumbnail">
-                  <a href="">
+                <a href="{% url "detail" post.id %}">
                       <img class="detail-profile-image" src="{{post.image.url}}" alt="...">
                   </a>
               <div class="row">

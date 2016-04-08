@@ -24,7 +24,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view(), name="home"),
+    url(r'^$', PostListView.as_view(), name="home"),
     url(r'signup/', SignupView.as_view(), name="sign-up"),
 
     url(r'', include('social.apps.django_app.urls', namespace='social')),
