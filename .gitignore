@@ -100,3 +100,6 @@ awesomepose/awesomepose/static/scss/_bootstrap.scss
 
 #swp
 *.swp
+
+#python social Auth pass
+awesomepose/social/
