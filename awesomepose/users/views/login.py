@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from users.forms import LoginForm, SignupForm
 from django.views.generic import TemplateView
 from django.contrib import messages
 from django.core.urlresolvers import reverse

@@ -2,7 +2,6 @@ from django.views.generic import TemplateView
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.views.generic import View
-from users.forms import SignupForm
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib import messages
