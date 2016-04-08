@@ -10160,4 +10160,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   padding-top: 10px;
 }
 
+.thumbnail {
+  border: 0px;
+}
+
 /*# sourceMappingURL=application.css.map */

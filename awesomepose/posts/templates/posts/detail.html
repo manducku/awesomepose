@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} Detail of Post {% endblock %}
+
+{% block content %}
+
+   <div class="page-header" id="banner">
+        <div class= "row">
+          <div class = "col-lg-6 col-lg-offset-3">
+           <div class = "page-header">
+               <div class="thumbnail">
+                   <div class="row">
+                    <div class="caption">
+                        <div class="col-lg-2">
+                            <img class="detail-profile-image" src="http://placehold.it/50x50"> 
+                        </div>
+                        <div class="col-lg-10">
+                            <h4>{{post.title}}</h4>
+                            <h5>by {{post.user.nickname}}</h5>
+                        </div>
+                   </div>
+                </div>
+                    <a href="">
+                        <img class="" src="{{post.image.url}}" alt="">
+                   </a>
+                </div>
+                    <div class="row">
+                    <div class="caption">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <h5>tag 영역</h5>
+                        </div>
+
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <p>
+                                content 영역 
+                            </p>
+                        </div>
+                   </div>
+          </div>
+       </div>
+    </div>
+{% endblock %}

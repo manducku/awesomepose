@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'welcome/', WelcomeView.as_view(), name="welcome"),
     url(r'logout/', LogoutView.as_view(), name="logout"),
 
-    url(r'posts/', PostListView.as_view(), name="posts"),
+    url(r'posts/$', PostListView.as_view(), name="posts"),
+    url(r'posts/(?P<slug>\w+)/$', PostDetailView.as_view(), name="detail"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
