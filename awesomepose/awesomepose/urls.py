@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from users.views import *
+from posts.views import *
 from awesomepose.views import *
 from django.conf.urls import include
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,4 +33,6 @@ urlpatterns = [
     url(r'welcome/', WelcomeView.as_view(), name="welcome"),
     url(r'logout/', LogoutView.as_view(), name="logout"),
 
-]
+    url(r'posts/', PostListView.as_view(), name="posts"),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

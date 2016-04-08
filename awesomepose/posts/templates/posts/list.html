@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %} home {% endblock %}
+
+{% block content %}
+   <div class="page-header" id="banner">
+   </div>
+    <div class="row">
+      {% for post in posts %}
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                  <a href="">
+                      <img src="{{post.image.url}}" alt="...">
+                  </a>
+              <div class="caption">
+                <p>{{ post.content }}<p>
+                <p> 
+                    <a href="#" class="btn btn-primary" role="button">Button</a> 
+                    <a href="#" class="btn btn-default" role="button">Button</a>
+                </p>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+{% endblock %}
