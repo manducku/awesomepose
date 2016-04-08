@@ -9,6 +9,7 @@ class Post(models.Model):
             )
 
     image = models.ImageField()
+    title = models.TextField()
     content = models.TextField()
 
     update_at = models.DateTimeField(

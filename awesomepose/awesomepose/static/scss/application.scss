@@ -4,7 +4,18 @@
 @import "theme/bootswatch";
 @import "font-awesome/font-awesome";
 @import "social/bootstrap-social";
+
 .content {
     padding-top:50px;
 }
 
+.posts-header {
+    padding-bottom: 40px;
+    background-color: white;
+    border-color: white;
+    color: #222222;
+}
+
+.detail-profile-image{
+    padding-top: 10px;
+}

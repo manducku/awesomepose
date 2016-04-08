@@ -10149,4 +10149,15 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   padding-top: 50px;
 }
 
+.posts-header {
+  padding-bottom: 40px;
+  background-color: white;
+  border-color: white;
+  color: #222222;
+}
+
+.detail-profile-image {
+  padding-top: 10px;
+}
+
 /*# sourceMappingURL=application.css.map */

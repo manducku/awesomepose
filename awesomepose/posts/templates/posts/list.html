@@ -4,23 +4,35 @@
 
 {% block content %}
    <div class="page-header" id="banner">
-   </div>
-    <div class="row">
+     <div class="row">
+       <div class="col-lg-4 col-lg-offset-4 posts-header">
+         <div class="btn-group btn-group-justified">
+               <a href="#" class="btn btn-default">Most Popular</a>
+               <a href="#" class="btn btn-default">Recent</a>
+         </div>
+       </div>
+     </div>
+     <div class="row">
       {% for post in posts %}
-          <div class="col-sm-6 col-md-4">
+          <div class="col-lg-4">
             <div class="thumbnail">
                   <a href="">
-                      <img src="{{post.image.url}}" alt="...">
+                      <img class="detail-profile-image" src="{{post.image.url}}" alt="...">
                   </a>
-              <div class="caption">
-                <p>{{ post.content }}<p>
-                <p> 
-                    <a href="#" class="btn btn-primary" role="button">Button</a> 
-                    <a href="#" class="btn btn-default" role="button">Button</a>
-                </p>
+              <div class="row">
+                <div class="caption">
+                  <div class="col-lg-2">
+                      <img class="detail-profile-image" src="http://placehold.it/50x50"> 
+                  </div>
+                  <div class="col-lg-10">
+                        <h4>{{ post.title }} </h4>
+                        <h5>by {{ post.user.nickname}}</h5>
+                 </div>
+                </div>
               </div>
             </div>
           </div>
       {% endfor %}
-    </div>
+     </div>
+   </div>
 {% endblock %}
