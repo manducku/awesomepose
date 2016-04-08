@@ -28,3 +28,6 @@ class Post(models.Model):
                     "slug": self.id,
                     }
                 )
+
+    def __str__(self):
+        return self.title

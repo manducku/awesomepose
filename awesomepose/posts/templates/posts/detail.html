@@ -37,11 +37,8 @@
                         </div>
 
                         <div class="col-lg-10 col-lg-offset-1">
-                           <div class="list-group">
                                 {% for comment in post.comment_set.all %}
-                                <a href="#" class="list-group-item active">
-                                        {{comment}}
-                                </a>
+                                    <h6>{{comment.content}}</h6>
                                 {% endfor %}
                         </div> 
                    </div>
