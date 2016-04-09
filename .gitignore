@@ -65,7 +65,8 @@ target/
 .env
 
 #migrations
-/migrations/
+migrations/
+
 #bower
 bower.*
 bower_components/
