@@ -27,7 +27,9 @@
                         <div class="caption">
                             <div class="col-lg-10 col-lg-offset-1">
                                 <p>
-                                    tag 영역
+                                    {% for tag in post.tag_set.all %}
+                                    <a href="{%url 'tag-detail' tag.name %}">{{tag}}</a>
+                                    {% endfor %}
                                 </p>
                             </div>
 
@@ -50,11 +52,17 @@
                                   {% csrf_token %}
                                   <fieldset>
                                     <div class="form-group">
-                                      <label for="inputComment" class="col-lg-3 col-lg-offset-1 control-label comment-label">Comment</label>
-                                     <div class="col-lg-7">
-                                      <input type="text" name="content" class="form-control detail-comment" placeholder="댓글 달기...">
-                                      <input type="submit" class="hide-button">
-                                     </div>
+                                        <div class="row borders">
+                                         <div class="col-lg-1 col-lg-offset-2">
+                                             <i class="fa fa-heart-o fa-2x heart"></i>
+                                         </div>
+                                         <label for="inputComment" class="col-lg-2 control-label comment-label">
+                                             Comment</label>
+                                         <div class="col-lg-6">
+                                          <input type="text" name="content" class="form-control detail-comment" placeholder="댓글 달기...">
+                                          <input type="submit" class="hide-button">
+                                         </div>
+                                        </div>
                                     </div>
                                   </fieldset>
                            </form>

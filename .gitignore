@@ -65,8 +65,8 @@ target/
 .env
 
 #migrations
-awesomepose/users/migrations/
-awesomepose/posts/migrations/
+migrations/
+
 #bower
 bower.*
 bower_components/

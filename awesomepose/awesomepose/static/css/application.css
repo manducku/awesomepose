@@ -10195,4 +10195,13 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   text-align: center;
 }
 
+.row .borders {
+  display: inline-flex;
+  width: 100%;
+}
+
+.heart {
+  padding-top: 7px;
+}
+
 /*# sourceMappingURL=application.css.map */
