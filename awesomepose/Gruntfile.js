@@ -5,7 +5,14 @@ module.exports = function(grunt) {
 
         npmConfig: grunt.file.readJSON('package.json'),
         bowerConfig: grunt.file.readJSON('bower.json'),
-
+        
+        watch:{
+                files:'awesomepose/static/scss/*.scss',
+                tasks:['sass'],
+    			options: {
+                		spawn: false
+            			},
+        }, 
 
         bowercopy: {
             // Bootstrap관련 자바스크립트 파일들을 프로젝트 폴더/js 밑으로 복사
@@ -86,6 +93,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-bowercopy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('run-sass', ['bowercopy', 'sass'])
+    grunt.registerTask('run-sass', ['bowercopy', 'sass']);
+    grunt.registerTask('watch', ['watch']); 
 };
