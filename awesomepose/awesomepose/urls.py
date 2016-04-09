@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'logout/', LogoutView.as_view(), name="logout"),
 
     url(r'posts/$', PostListView.as_view(), name="posts"),
+    url(r'posts/new/$', PostCreateView.as_view(), name="post-new"),
     url(r'posts/(?P<slug>\w+)/$', PostDetailView.as_view(), name="detail"),
     url(r'posts/(?P<slug>\w+)/comments/$', PostCommentCreateView.as_view(), name="post-comments"),
 

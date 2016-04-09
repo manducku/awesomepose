@@ -1,11 +1,14 @@
 from django import forms
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 from posts.models import Post
 
 
 class PostForm(forms.ModelForm):
-    model = Post
 
     class Meta:
         model = Post
-        fields = ('title', 'content')
+        widgets = {
+                'image': SummernoteWidget(),
+                }
+        fields = ['title', 'content', 'image']
