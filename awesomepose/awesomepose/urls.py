@@ -21,6 +21,7 @@ from django.conf import settings
 
 from users.views import *
 from posts.views import *
+from posts.api import *
 from tags.views import *
 from awesomepose.views import *
 
@@ -28,20 +29,23 @@ from awesomepose.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', PostListView.as_view(), name="home"),
-    url(r'signup/', SignupView.as_view(), name="sign-up"),
+    url(r'^signup/$', SignupView.as_view(), name="sign-up"),
 
     url(r'', include('social.apps.django_app.urls', namespace='social')),
 
-    url(r'login/', LoginView.as_view(), name="login"),
-    url(r'welcome/', WelcomeView.as_view(), name="welcome"),
-    url(r'logout/', LogoutView.as_view(), name="logout"),
+    url(r'^login/$', LoginView.as_view(), name="login"),
+    url(r'^welcome/$', WelcomeView.as_view(), name="welcome"),
+    url(r'^logout/$', LogoutView.as_view(), name="logout"),
 
-    url(r'posts/$', PostListView.as_view(), name="posts"),
-    url(r'posts/new/$', PostCreateView.as_view(), name="post-new"),
-    url(r'posts/(?P<slug>\w+)/$', PostDetailView.as_view(), name="detail"),
-    url(r'posts/(?P<slug>\w+)/comments/$', PostCommentCreateView.as_view(), name="post-comments"),
+    url(r'^posts/$', PostListView.as_view(), name="posts"),
+    url(r'^posts/new/$', PostCreateView.as_view(), name="post-new"),
+    url(r'^posts/(?P<slug>\w+)/$', PostDetailView.as_view(), name="detail"),
+    url(r'^posts/(?P<slug>\w+)/comments/$', PostCommentCreateView.as_view(), name="post-comments"),
+    url(r'^api/posts/$', PostListAPIView.as_view(), name="api-posts"),
+    url(r'^api/posts/(?P<slug>\w+)/$', PostCommentListAPIView.as_view(), name="api-comment-list"),
 
-    url(r'explore/tags/(?P<slug>\w+)/$', TagDetailView.as_view(), name="tag-detail"),
+
+    url(r'^explore/tags/(?P<slug>\w+)/$', TagDetailView.as_view(), name="tag-detail"),
     url(r'^summernote/', include('django_summernote.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
