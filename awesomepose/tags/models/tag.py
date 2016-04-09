@@ -27,3 +27,12 @@ class Tag(models.Model):
         return "#{tag_name}".format(
                 tag_name=self.name
                 )
+
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        return reverse(
+                "tag-detail",
+                kwargs={
+                    "slug": self.name
+                    }
+                )
