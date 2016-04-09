@@ -6,6 +6,7 @@ class Tag(models.Model):
 
     name = models.TextField(
             max_length=10,
+            unique=True,
             )
 
     update_at = models.DateTimeField(
