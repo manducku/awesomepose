@@ -67,6 +67,7 @@ target/
 #migrations
 awesomepose/users/migrations/
 awesomepose/posts/migrations/
+awesomepose/tags/migrations/
 #bower
 bower.*
 bower_components/
