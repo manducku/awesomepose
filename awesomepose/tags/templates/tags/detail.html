@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} {{tag.full_name}} {% endblock %}
+
+{% block content %}
+   <div class="page-header" id="banner">
+     <div class="row">
+       <div class="col-lg-4 col-lg-offset-4 posts-header">
+         <div class="btn-group btn-group-justified">
+             <a href="#" class="btn btn-default">{{tag.full_name}}</a>
+         </div>
+       </div>
+     </div>
+     <div class="row">
+      {% for post in tag.post_set.all %}
+          <div class="col-lg-4">
+            <div class="thumbnail">
+                <a href="{% url "detail" post.id %}">
+                      <img class="detail-profile-image" src="{{post.image.url}}" alt="...">
+                  </a>
+              <div class="row">
+                <div class="caption">
+                  <div class="col-lg-2">
+                      <img class="detail-profile-image" src="http://placehold.it/50x50"> 
+                  </div>
+                  <div class="col-lg-10">
+                        <h4>{{ post.title }} </h4>
+                        <h5>by {{ post.user.nickname}}</h5>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+     </div>
+   </div>
+{% endblock %}
