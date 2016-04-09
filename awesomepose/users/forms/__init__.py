@@ -1,2 +1,2 @@
-from .signup import SignupForm
-from .login import LoginForm
+from .custom_user_change import CustomUserChangeForm
+from .custom_user_creation import CustomUserCreationForm
