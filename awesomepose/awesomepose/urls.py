@@ -41,5 +41,6 @@ urlpatterns = [
     url(r'posts/(?P<slug>\w+)/comments/$', PostCommentCreateView.as_view(), name="post-comments"),
 
     url(r'explore/tags/(?P<slug>\w+)/$', TagDetailView.as_view(), name="tag-detail"),
+    url(r'^summernote/', include('django_summernote.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
