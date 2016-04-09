@@ -1,12 +1,16 @@
-from posts.forms import PostForm
-
 from django.views.generic import FormView, CreateView
+
+from posts.models import Post
 
 
 class PostCreateView(CreateView):
+    model = Post
     template_name = "posts/create.html"
-    form_class = PostForm
-    success_url = '/'
+    fields = [
+            'title',
+            'content',
+            'image',
+            ]
 
     def form_valid(self, form):
         form.instance.user = self.request.user

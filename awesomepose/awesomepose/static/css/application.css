@@ -10204,4 +10204,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   padding-top: 7px;
 }
 
+.create-post-content.form-control {
+  height: 300px;
+}
+
 /*# sourceMappingURL=application.css.map */
