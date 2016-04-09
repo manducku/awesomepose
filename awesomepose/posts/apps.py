@@ -1,8 +1,8 @@
-from django.apss import AppConfig
+from django.apps import AppConfig
 
 
 class PostAppConfig(AppConfig):
     name = "posts"
 
     def ready(self):
-        from post.signals.post_save import post_save_post_tag
+        from posts.signals.post_save import post_save_post_tags
