@@ -66,7 +66,7 @@ target/
 
 #migrations
 awesomepose/users/migrations/
-
+awesomepose/posts/migrations/
 #bower
 bower.*
 bower_components/
@@ -103,3 +103,6 @@ awesomepose/awesomepose/static/scss/_bootstrap.scss
 
 #python social Auth pass
 awesomepose/social/
+
+#node module
+node_modules
