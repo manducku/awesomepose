@@ -21,3 +21,9 @@ class Tag(models.Model):
         return "#{tag}".format(
                 tag=self.name
                 )
+
+    @property
+    def full_name(self):
+        return "#{tag_name}".format(
+                tag_name=self.name
+                )

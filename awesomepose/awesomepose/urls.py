@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from users.views import *
-from posts.views import *
-from awesomepose.views import *
 from django.conf.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
+
+from users.views import *
+from posts.views import *
+from tags.views import *
+from awesomepose.views import *
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -37,5 +40,6 @@ urlpatterns = [
     url(r'posts/(?P<slug>\w+)/$', PostDetailView.as_view(), name="detail"),
     url(r'posts/(?P<slug>\w+)/comments/$', PostCommentCreateView.as_view(), name="post-comments"),
 
+    url(r'explore/tags/(?P<slug>\w+)/$', TagDetailView.as_view(), name="tag-detail"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
