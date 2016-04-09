@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 
+from tags.models import Tag
+
 
 class Post(models.Model):
 
@@ -17,6 +19,9 @@ class Post(models.Model):
             )
     create_at = models.DateTimeField(
             auto_now=True,
+            )
+    tag_set = models.ManyToManyField(
+            Tag,
             )
 
     def get_absolute_url(self):
