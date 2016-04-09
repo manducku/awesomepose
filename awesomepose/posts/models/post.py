@@ -23,7 +23,7 @@ class Post(models.Model):
         from django.core.urlresolvers import reverse
 
         return reverse(
-                "post",
+                "detail",
                 kwargs={
                     "slug": self.id,
                     }

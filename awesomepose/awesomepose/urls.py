@@ -35,5 +35,7 @@ urlpatterns = [
 
     url(r'posts/$', PostListView.as_view(), name="posts"),
     url(r'posts/(?P<slug>\w+)/$', PostDetailView.as_view(), name="detail"),
+    url(r'posts/(?P<slug>\w+)/comments/$', PostCommentCreateView.as_view(), name="post-comments"),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

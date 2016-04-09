@@ -1,2 +1,2 @@
-from .list import PostListView
-from .detail import PostDetailView
+from .comment import *
+from .post import *

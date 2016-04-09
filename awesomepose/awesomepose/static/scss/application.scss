@@ -23,3 +23,33 @@
 .thumbnail {
     border: 0px;
 }
+
+.detail-comment{
+    border: 0px;
+    color: #333333;
+    box-shadow: inset 0 0px 0px;
+    padding-left:0px;
+}
+
+.hide-button{
+    visibility: hidden;
+}
+
+.form-control-no-border:focus {
+      border-color:#fff;
+        outline: 0;
+          -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.form-control:focus {
+             border-color: #fffffc;
+             box-shadow: none;
+                     }
+.comment-list{
+    text-align: center;
+}
+
+.form-horizontal .control-label{
+    text-align: center;
+}

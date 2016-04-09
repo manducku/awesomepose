@@ -7,7 +7,6 @@
    <div class="page-header" id="banner">
         <div class= "row">
           <div class = "col-lg-6 col-lg-offset-3">
-           <div class = "page-header">
                <div class="thumbnail">
                    <div class="row">
                     <div class="caption">
@@ -18,30 +17,51 @@
                             <h4>{{post.title}}</h4>
                             <h5>by {{post.user.nickname}}</h5>
                         </div>
+                    </div>
                    </div>
-                </div>
                     <a href="">
                         <img class="" src="{{post.image.url}}" alt="">
                    </a>
                 </div>
-                    <div class="row">
-                    <div class="caption">
-                        <div class="col-lg-10 col-lg-offset-1">
-                            <h5>tag 영역</h5>
-                        </div>
 
-                        <div class="col-lg-10 col-lg-offset-1">
-                            <p>
-                                {{post.content}} 
-                            </p>
-                        </div>
+                        <div class="caption">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>
+                                    tag 영역
+                                </p>
+                            </div>
 
-                        <div class="col-lg-10 col-lg-offset-1">
-                                {% for comment in post.comment_set.all %}
-                                    <h6>{{comment.content}}</h6>
-                                {% endfor %}
-                        </div> 
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>
+                                    {{post.content}} 
+                                </p>
+                            </div>
+
+                           {% for comment in post.comment_set.all %}
+                            <div class="col-lg-3 col-lg-offset-1 comment-list">
+                                <p class="text-warning"><h6>{{comment.user.nickname}}</h6></p>
+                            </div>
+                            <div class="col-lg-7">
+                                <p><h6>{{comment.content}}</h6></p>
+                            </div>
+                           {% endfor %}
+                           <div class="col-lg-12">
+                           <form class="form-horizontal" action="{% url "post-comments" post.id %}" method="post">
+                                  {% csrf_token %}
+                                  <fieldset>
+                                    <div class="form-group">
+                                      <label for="inputComment" class="col-lg-3 col-lg-offset-1 control-label comment-label">Comment</label>
+                                     <div class="col-lg-7">
+                                      <input type="text" name="content" class="form-control detail-comment" placeholder="댓글 달기...">
+                                      <input type="submit" class="hide-button">
+                                     </div>
+                                    </div>
+                                  </fieldset>
+                           </form>
+                           </div>
+                     </div>
                    </div>
+                </div>
           </div>
        </div>
     </div>
