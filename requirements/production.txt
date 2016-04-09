@@ -3,3 +3,4 @@ python-social-auth
 django-pipeline
 pillow
 django-summernote
+djangorestframework

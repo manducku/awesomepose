@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'awesomepose',
     'social.apps.django_app.default',
     'django_summernote',
+    'rest_framework',
 
     'users',
     'posts',
