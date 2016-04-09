@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         bowerConfig: grunt.file.readJSON('bower.json'),
         
         watch:{
-                files:'awesomepose/static/scss/*.scss',
+                files:'awesomepose/static/scss/**/*.scss',
                 tasks:['sass'],
     			options: {
                 		spawn: false
