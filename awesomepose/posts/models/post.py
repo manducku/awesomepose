@@ -23,6 +23,10 @@ class Post(models.Model):
     tag_set = models.ManyToManyField(
             Tag,
             )
+    like_user_set = models.ManyToManyField(
+            settings.AUTH_USER_MODEL,
+            related_name="like_post_set",
+            )
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
