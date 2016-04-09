@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # 'pipeline',
     'awesomepose',
     'social.apps.django_app.default',
+    'django_summernote',
 
     'users',
     'posts',
