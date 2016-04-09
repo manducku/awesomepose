@@ -27,7 +27,9 @@
                         <div class="caption">
                             <div class="col-lg-10 col-lg-offset-1">
                                 <p>
-                                    tag 영역
+                                    {% for tag in post.tag_set.all %}
+                                    <a href="">{{tag}}</a>
+                                    {% endfor %}
                                 </p>
                             </div>
 
