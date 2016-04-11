@@ -10156,10 +10156,6 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   color: #222222;
 }
 
-.detail-profile-image {
-  padding-top: 10px;
-}
-
 .thumbnail {
   border: 0px;
 }
@@ -10224,6 +10220,15 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 
 span.text-warning {
   margin: 10px;
+}
+
+.detail-profile-image {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.list-profile-image {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=application.css.map */
