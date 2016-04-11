@@ -57,7 +57,7 @@
                     function(){
                         $list_elements.append(
                                 "<li class=\"list-group-item\">"+
-                                "<span class=\"text-warning\">"+
+                                "<span class=\"text-warning \">"+
                                 nickname+
                                 "</span>"+
                                 "<span>"+
