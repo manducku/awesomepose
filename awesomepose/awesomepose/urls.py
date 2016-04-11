@@ -41,6 +41,7 @@ urlpatterns = [
     url(r'^posts/new/$', PostCreateView.as_view(), name="post-new"),
     url(r'^posts/(?P<slug>\w+)/$', PostDetailView.as_view(), name="detail"),
     url(r'^posts/(?P<slug>\w+)/comments/$', PostCommentCreateView.as_view(), name="post-comments"),
+
     url(r'^api/posts/$', PostListAPIView.as_view(), name="api-posts"),
     url(r'^api/posts/(?P<slug>\w+)/$', PostCommentListAPIView.as_view(), name="api-comment-list"),
 

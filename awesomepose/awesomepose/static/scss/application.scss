@@ -46,8 +46,10 @@
              border-color: #fffffc;
              box-shadow: none;
                      }
-.comment-list{
-    text-align: center;
+
+.comment-list>li{
+    border: 0px;
+    padding: 5px 5px;
 }
 
 .form-horizontal .control-label{
@@ -66,3 +68,4 @@
 .create-post-content.form-control{
     height: 300px;
 }
+

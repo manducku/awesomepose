@@ -10187,8 +10187,9 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   box-shadow: none;
 }
 
-.comment-list {
-  text-align: center;
+.comment-list > li {
+  border: 0px;
+  padding: 5px 5px;
 }
 
 .form-horizontal .control-label {
