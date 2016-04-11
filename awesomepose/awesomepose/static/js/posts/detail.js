@@ -64,7 +64,7 @@
                                 $comment.val()+
                                 "</span>"+
                                 "</li>");
-                        $("#comment").removeAttr('value');
+                        $("#comment").val("");
                     }
             })
             .done(function(data, textStatus, jqXHR){
