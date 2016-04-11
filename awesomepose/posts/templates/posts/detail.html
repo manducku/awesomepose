@@ -13,9 +13,13 @@
                     <div class="caption">
                         <div class="col-lg-2">
                             {% if post.user.profile_image %}
-                            <img class="img-circle detail-profile-image" height="50px" width="50px" src="{{post.user.profile_image.url}}"> 
+							<a href="{% url "profile" post.user.id %}">
+                                <img class="img-circle detail-profile-image" height="50px" width="50px" src="{{post.user.profile_image.url}}"/> 
+                            </a>
                             {% else %}
+							<a href="{% url "profile" post.user.id %}">
                             <img class="img-circle detail-profile-image" height="50px" width="50px" src="http://placehold.it/350x150">
+                            </a>
                             {% endif %}
                         </div>
                         <div class="col-lg-10">
@@ -24,9 +28,7 @@
                         </div>
                     </div>
                    </div>
-                    <a href="">
                         <img class="" src="{{post.image.url}}" alt="">
-                   </a>
                 </div>
 
                         <div class="caption">

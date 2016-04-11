@@ -113,3 +113,43 @@ span.text-warning{
     color: #fff;
     background-color: #424242;
 }
+
+.nav-profile{
+    margin-bottom:20px;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Optional, to align inner items 
+                              hddjjorizontally inside the column */
+}
+
+.vertical-align > [class^="col-"] > div,
+.vertical-align > [class*=" col-"] > div {
+  flex-grow: 1;
+}
+
+.profile-name{
+    text-align: center;
+}
+
+.nav-profile > div > blockquote.text-warning{
+    margin: 0px;
+}
+.nav-profile > div > blockquote > p {
+    margin-top:10px;
+}
+
+blockquote > p{
+    font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    color: inherit;
+}
