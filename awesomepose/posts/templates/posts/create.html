@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %} New Post {% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        
+        <div class="page-header">
+            <h1>New Post</h1>
+        </div>
+
+        <form acton="" method="post" enctype="multipart/form-data" class="form-horizontal">
+            {% csrf_token %}
+          <fieldset>
+            <div class="form-group">
+              <label for="inputtitle" class="col-lg-2 control-label">Title</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" name="title" id="inputtitle" placeholder="제목을 입력해 주세요">
+              </div>
+            </div>
+
+            
+            <div class="form-group">
+              <label for="textArea" class="col-lg-2 control-label create-post-content">Content</label>
+              <div class="col-lg-10">
+                <textarea type="text" name="content" class="create-post-content form-control" rows="3" id="inputcontent"></textarea>
+                <span class="help-block">상세 구매 후기를 작성해 주세요.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                   <div class="row">
+                   <input id="photoCover" class="col-lg-10" type="file" name="image" multiple/>
+                   <button type="submit" class="btn btn-primary btn-sm">등록하기</button>
+                </div>
+            </div>
+          </fieldset>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

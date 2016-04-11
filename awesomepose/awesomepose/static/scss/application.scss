@@ -1,0 +1,81 @@
+@import "bootstrap/bootstrap/variables";
+@import "theme/variables";
+@import "bootstrap/bootstrap_custom";
+@import "theme/bootswatch";
+@import "font-awesome/font-awesome";
+@import "social/bootstrap-social";
+
+.content {
+    padding-top:50px;
+}
+
+.posts-header {
+    padding-bottom: 40px;
+    background-color: white;
+    border-color: white;
+    color: #222222;
+}
+
+.detail-profile-image{
+    padding-top: 10px;
+}
+
+.thumbnail {
+    border: 0px;
+}
+
+.detail-comment{
+    border: 0px;
+    color: #333333;
+    box-shadow: inset 0 0px 0px;
+    padding-left:0px;
+}
+
+.hide-button{
+    visibility: hidden;
+}
+
+.form-control-no-border:focus {
+      border-color:#fff;
+        outline: 0;
+          -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.form-control:focus {
+             border-color: #fffffc;
+             box-shadow: none;
+                     }
+
+.comment-list>li{
+    border: 0px;
+    padding: 5px 5px;
+}
+
+.form-horizontal .control-label{
+    text-align: center;
+}
+
+.row .borders{
+        display: inline-flex;
+        width: 100%;
+        }
+
+.heart {
+    padding-top: 7px;
+}
+
+.create-post-content.form-control{
+    height: 300px;
+}
+
+#grid[data-columns]::before {
+        content: '3 .col-lg-4';
+    }
+    /* These are the classes that are going to be applied: */
+.column { float: left; }
+.size-1of3 { width: 33.333%; }
+
+span.text-warning{
+    margin:10px;
+}

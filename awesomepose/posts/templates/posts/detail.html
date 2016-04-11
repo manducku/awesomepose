@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Detail of Post {% endblock %}
+
+{% block content %}
+
+   <div class="page-header" id="banner">
+        <div class= "row">
+          <div class = "col-lg-6 col-lg-offset-3">
+               <div class="thumbnail">
+                   <div class="row">
+                    <div class="caption">
+                        <div class="col-lg-2">
+                            <img class="detail-profile-image" src="http://placehold.it/50x50"> 
+                        </div>
+                        <div class="col-lg-10">
+                            <h4>{{post.title}}</h4>
+                            <h5>by {{post.user.nickname}}</h5>
+                        </div>
+                    </div>
+                   </div>
+                    <a href="">
+                        <img class="" src="{{post.image.url}}" alt="">
+                   </a>
+                </div>
+
+                        <div class="caption">
+                          <div class= "row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>
+                                    {% for tag in post.tag_set.all %}
+                                    <a href="{%url 'tag-detail' tag.name %}">{{tag}}</a>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class= "row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>
+                                    {{post.content}} 
+                                </p>
+                            </div>
+                       </div>
+
+                       <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <ul class="list-group comment-list" data-post-id="{{post.id}}" data-nickname="{{request.user.nickname}}">
+                               </ul>
+                            </div>
+                       </div>
+    
+                       <div class="row">
+                           <div class="col-lg-12">
+                              <form class="form-horizontal" name="commentform" id="commentform" method="post">
+                                  {% csrf_token %}
+                                  <fieldset>
+                                    <div class="form-group">
+                                        <div class="row borders">
+                                         <div class="col-lg-1 col-lg-offset-2">
+                                             <i class="fa fa-heart-o fa-2x heart"></i>
+                                         </div>
+                                         <label for="inputComment" class="col-lg-2 control-label comment-label">
+                                             Comment</label>
+                                         <div class="col-lg-6">
+                                             <input type="text" name="content" class="form-control detail-comment" id="comment" placeholder="댓글 달기...">
+                                             <input type="submit" id="class-submit" style="position: absolute; left: -9999px"> 
+                                         </div>
+                                        </div>
+                                    </div>
+                                  </fieldset>
+                              </form>
+                           </div>
+                      </div>
+                    </div>
+                   </div>
+                </div>
+          </div>
+       </div>
+    </div>
+{% endblock %}
+
+{% block custom_js %}
+<script src="{% static 'js/posts/detail.js' %}" type="text/javascript" %}></script>
+{% endblock %}

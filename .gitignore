@@ -60,3 +60,52 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+#.env 
+.env
+
+#migrations
+migrations/
+
+#bower
+bower.*
+bower_components/
+
+#db
+awesomepose/db.sqlite3
+
+#node_module
+awesomepose/node_modules/
+
+#json
+*.json
+
+#static font, bootstrap, jqeury
+awesomepose/awesomepose/static/fonts/
+awesomepose/awesomepose/static/js/bootstrap/
+awesomepose/awesomepose/static/js/jquery/
+awesomepose/awesomepose/static/scss/bootstrap/
+awesomepose/awesomepose/static/scss/theme/
+awesomepose/awesomepose/static/scss/_bootstrap-compass.scss
+awesomepose/awesomepose/static/scss/_bootstrap-custom.scss
+awesomepose/awesomepose/static/scss/_bootstrap-mincer.scss
+awesomepose/awesomepose/static/scss/_bootstrap-sprockets.scss
+awesomepose/awesomepose/static/scss/_bootstrap.scss
+
+#sass cash
+.sass-cache
+
+#map
+*.map
+
+#swp
+*.swp
+
+#python social Auth pass
+awesomepose/social/
+
+#node module
+node_modules
+
+#salvattore
+salvattore/
