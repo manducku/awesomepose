@@ -10187,8 +10187,9 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   box-shadow: none;
 }
 
-.comment-list {
-  text-align: center;
+.comment-list > li {
+  border: 0px;
+  padding: 5px 5px;
 }
 
 .form-horizontal .control-label {
@@ -10206,6 +10207,23 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 
 .create-post-content.form-control {
   height: 300px;
+}
+
+#grid[data-columns]::before {
+  content: '3 .col-lg-4';
+}
+
+/* These are the classes that are going to be applied: */
+.column {
+  float: left;
+}
+
+.size-1of3 {
+  width: 33.333%;
+}
+
+span.text-warning {
+  margin: 10px;
 }
 
 /*# sourceMappingURL=application.css.map */
