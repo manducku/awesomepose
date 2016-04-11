@@ -10231,4 +10231,33 @@ span.text-warning {
   margin-top: 10px;
 }
 
+.navbar-brand {
+  font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+  font-weight: 200;
+  line-height: 1.1;
+  color: white;
+}
+
+.navbar-default {
+  background-color: #212121;
+  border-color: #212121;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: #424242;
+  border-color: #424242;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: #212121;
+  border-color: #212121;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: #424242;
+}
+
 /*# sourceMappingURL=application.css.map */
