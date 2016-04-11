@@ -171,7 +171,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.user.get_username',
     # 'social.pipeline.user.create_user',
     'users.socials.create_user',  # overiding
-    # 'users.social.update_avatar',add
+    'users.socials.update_avatar',
     'social.pipeline.social_auth.associate_user',
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details'
