@@ -11,7 +11,7 @@ class Post(models.Model):
             )
 
     image = models.ImageField()
-    title = models.TextField()
+    title = models.TextField(max_length=20)
     content = models.TextField()
 
     update_at = models.DateTimeField(
@@ -24,14 +24,13 @@ class Post(models.Model):
             Tag,
             )
 
-    """
     # post_set과 이름이 겹치므로, like_user_set으로 이름 생성
     like_user_set = models.ManyToManyField(
             settings.AUTH_USER_MODEL,
             related_name="like_post_set",
             through="Like",
             )
-    """
+
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
 

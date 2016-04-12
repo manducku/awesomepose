@@ -10302,4 +10302,12 @@ blockquote > p {
   color: inherit;
 }
 
+.heart {
+  cursor: pointer;
+}
+
+.fa-heart:before {
+  color: #42A5F5;
+}
+
 /*# sourceMappingURL=application.css.map */

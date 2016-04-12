@@ -78,23 +78,37 @@
     });
 
 
-        $.ajax({
-                url: "/api/posts/"+post_id,
-                type: "GET",
-                success: function(comments){
-                    for (var i=0; i < comments.length; i++){
-                        var comment = comments[i];
-                        $list_elements.append(
-                                "<li class=\"list-group-item\">"+
-                                "<span class=\"text-warning\">"+
-                                comment.username+
-                                "</span>"+
-                                "<span>"+
-                                comment.content+
-                                "</span>"+
-                                "</li>");
-                    }
+    $.ajax({
+            url: "/api/posts/"+post_id,
+            type: "GET",
+            success: function(comments){
+                for (var i=0; i < comments.length; i++){
+                    var comment = comments[i];
+                    $list_elements.append(
+                            "<li class=\"list-group-item\">"+
+                            "<span class=\"text-warning\">"+
+                            comment.username+
+                            "</span>"+
+                            "<span>"+
+                            comment.content+
+                            "</span>"+
+                            "</li>");
                 }
-            });
+            }
+    });
+
+    var $heart = $(".heart");
+
+    $heart.click(function(){
+        if($heart.hasClass("fa-heart")){
+            $heart.removeClass("fa-heart");
+            $heart.addClass("fa-heart-o");
+        }
+        else{
+            $heart.removeClass("fa-heart-o");
+            $heart.addClass("fa-heart");
+        }
+    });
+
   });
 })();
