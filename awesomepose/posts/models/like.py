@@ -5,7 +5,6 @@ from posts.models import Post
 
 
 class Like(models.Model):
-
     user = models.ForeignKey(
             settings.AUTH_USER_MODEL,
             )

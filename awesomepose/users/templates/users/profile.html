@@ -4,17 +4,25 @@
 
 {% block content %}
 <div class="page-header" id="banner">
-    <div class="row">
-       <div class="col-lg-4 col-lg-offset-4 posts-header">
-         <div class="btn-group btn-group-justified">
-               <a href="#" class="btn btn-default">Most Popular</a>
-               <a href="#" class="btn btn-default">Recent</a>
-         </div>
+	<div class="row">
+        <div class="profile-name col-lg-2 col-lg-offset-3">
+            <h3>PROFILE</h3>
+        </div>
+	</div>
+    <div class="row nav-profile vertical-align">
+       <div class="col-lg-2 col-lg-offset-3">
+                      <img class="list-profile-image img-circle" height="140px" width="140px" data-holder-rendered="true" src="{{user.profile_image.url}}"> 
+       </div>
+       <div class="col-lg-4">
+           <blockquote>
+                 <span>{{user.nickname}}</span>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. </p>
+           </blockquote>
        </div>
    </div>
 </div>
      <div class="row" id="grid" data-columns>
-      {% for post in posts %}
+      {% for post in user.post_set.all %}
       <div>
             <div class="thumbnail">
                 <a href="{% url "detail" post.id %}">
@@ -22,14 +30,7 @@
                   </a>
               <div class="row">
                 <div class="caption">
-                  <div class="col-lg-2">
-                      {% if post.user.profile_image %}
-                      <img class="list-profile-image img-circle" height="50px" width="50px" data-holder-rendered="true" src="{{post.user.profile_image.url}}"> 
-                      {% else %}
-                      <img class="list-profile-image img-circle" height="50px" width="50px" data-holder-rendered="true" src="http://placehold.it/50x50">
-                  {% endif %}
-                  </div>
-                  <div class="col-lg-10">
+                  <div class="col-lg-12">
                         <h4>{{ post.title }} </h4>
                         <h5>by {{ post.user.nickname}}</h5>
                  </div>
@@ -39,12 +40,10 @@
       </div>
       {% endfor %}
      </div>
-
 {% endblock %}
 
 {% block custom_js %}
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="{% static 'js/salvattore/salvattore.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/posts/list.js' %}"></script>
 {% endblock %}
 

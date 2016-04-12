@@ -8,8 +8,8 @@
 
           {% if request.user.is_authenticated %}
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""target="">{{request.user.nickname}}</a></li>
-                <li><a href="{% url 'post-new' %}" target="">New Post</a></li>
+                <li><a href="{% url 'post-new' %}" target="">리뷰 쓰기</a></li>
+                <li><a href="{% url 'profile' request.user.id %}"target="">{{request.user.nickname}}</a></li>
                 <li><a href="{% url 'logout' %}" target="">로그아웃 </a></li>
           </ul>  
           {% else %}

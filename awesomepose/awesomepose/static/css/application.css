@@ -10156,10 +10156,6 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   color: #222222;
 }
 
-.detail-profile-image {
-  padding-top: 10px;
-}
-
 .thumbnail {
   border: 0px;
 }
@@ -10183,7 +10179,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 }
 
 .form-control:focus {
-  border-color: #fffffc;
+  border-color: #E0E0E0;
   box-shadow: none;
 }
 
@@ -10224,6 +10220,86 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 
 span.text-warning {
   margin: 10px;
+}
+
+.detail-profile-image {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.list-profile-image {
+  margin-top: 10px;
+}
+
+.navbar-brand {
+  font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+  font-weight: 200;
+  line-height: 1.1;
+  color: white;
+}
+
+.navbar-default {
+  background-color: #212121;
+  border-color: #212121;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: #424242;
+  border-color: #424242;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: #212121;
+  border-color: #212121;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: #424242;
+}
+
+.nav-profile {
+  margin-bottom: 20px;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Optional, to align inner items 
+     hddjjorizontally inside the column */
+}
+
+.vertical-align > [class^="col-"] > div,
+.vertical-align > [class*=" col-"] > div {
+  flex-grow: 1;
+}
+
+.profile-name {
+  text-align: center;
+}
+
+.nav-profile > div > blockquote.text-warning {
+  margin: 0px;
+}
+
+.nav-profile > div > blockquote > p {
+  margin-top: 10px;
+}
+
+blockquote > p {
+  font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+  color: inherit;
 }
 
 /*# sourceMappingURL=application.css.map */

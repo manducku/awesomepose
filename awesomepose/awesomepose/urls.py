@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name="login"),
     url(r'^welcome/$', WelcomeView.as_view(), name="welcome"),
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
+    url(r'^profile/(?P<slug>\w+)/$', ProfileView.as_view(), name="profile"),
 
     url(r'^posts/$', PostListView.as_view(), name="posts"),
     url(r'^posts/new/$', PostCreateView.as_view(), name="post-new"),
