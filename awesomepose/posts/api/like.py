@@ -11,10 +11,10 @@ class LikeAPIView(APIView):
 
     def get(self, request, **kwargs):
         post = Post.objects.get(
-                pk=self.kwargs.get('post_id')
+                pk=self.kwargs.get('slug')
                 )
         user = User.objects.get(
-                pk=self.kwargs.get('user_id')
+                pk=self.request.user.id
                 )
         like = Like.objects.get(post=post, user=user)
         post_like_count = post.like_set.count()
