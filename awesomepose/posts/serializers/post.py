@@ -15,6 +15,7 @@ class PostBaseSerializer(serializers.ModelSerializer):
                 'profile_image',
                 'title',
                 'content',
+                'image',
                 )
 
 

@@ -7,7 +7,7 @@ from posts.serializers.post import PostListSerializer
 
 
 class PostSetPagination(PageNumberPagination):
-        page_size = 5
+        page_size = 12
 
 
 class PostListAPIView(ListAPIView):
