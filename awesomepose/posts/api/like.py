@@ -27,17 +27,32 @@ class LikeAPIView(APIView):
         return Response(data)
 
     def post(self, request, **kwargs):
-        pass
         data = request.data
         post = Post.objects.get(
                 pk=data.get('post')
                 )
-        comment = post.comment_set.create(
-                user=request.user,
-                content=data.get('content'),
-                )
 
-        serializer = CommentListSerializer(comment)
-        if CommentListSerializer(data=serializer.data):
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user = User.objects.get(
+                pk=self.request.user.id
+                )
+        print(post, user)
+        like, created = Like.objects.get_or_create(post=post, user=user)
+        post_like_count = post.like_set.count()
+        if post_like_count:
+            return Response(post_like_count, status=status.HTTP_201_CREATED)
+        return Response(errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, **kwargs):
+            data = request.data
+            post = Post.objects.get(
+                    pk=data.get('post')
+                    )
+
+            user = User.objects.get(
+                    pk=self.request.user.id
+                    )
+            like = Like.objects.get(post=post, user=user)
+            like.delete()
+
+            post_like_count = post.like_set.count()
+            return Response(post_like_count, status=status.HTTP_201_CREATED)

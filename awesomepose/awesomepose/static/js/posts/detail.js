@@ -100,28 +100,17 @@
     var $heart = $(".heart");
 
     $heart.click(function(){
-        if($heart.hasClass("fa-heart")){
-            $heart.removeClass("fa-heart");
-            $heart.addClass("fa-heart-o");
+        if($heart.hasClass("fa-heart-o")){
             $.ajax({
                 url: "/api/like/"+post_id+"/",
                 type: "POST",
                 data: {
-                    "content": $comment.val(),
-                    "post": post_id
+                    "post": post_id,
                 },
                 success:
-                    function(){
-                        $list_elements.append(
-                                "<li class=\"list-group-item\">"+
-                                "<span class=\"text-warning \">"+
-                                nickname+
-                                "</span>"+
-                                "<span>"+
-                                $comment.val()+
-                                "</span>"+
-                                "</li>");
-                        $("#comment").val("");
+                    function(data){
+                        $heart.removeClass("fa-heart-o");
+                        $heart.addClass("fa-heart");
                     }
             })
             .done(function(data, textStatus, jqXHR){
@@ -129,14 +118,30 @@
             })
             .fail(function(jqXHR, textStatus, errorThrown){
                 console.log("Http request suceeded: "+jqXHR.status);
-                console.log(textStatus);
-                console.log(errorThrown);
             });
 
         }
         else{
-            $heart.removeClass("fa-heart-o");
-            $heart.addClass("fa-heart");
+            $.ajax({
+                url: "/api/like/"+post_id+"/",
+                type: "DELETE",
+                data: {
+                    "post": post_id,
+                },
+                success:
+                    function(data){
+                        $heart.removeClass("fa-heart");
+                        $heart.addClass("fa-heart-o");
+                    }
+            })
+            .done(function(data, textStatus, jqXHR){
+                console.log("Http request suceeded: "+jqXHR.status);
+            })
+            .fail(function(jqXHR, textStatus, errorThrown){
+                console.log("Http request suceeded: "+jqXHR.status);
+            });
+
+            
         }
     });
 
