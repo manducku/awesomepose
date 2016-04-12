@@ -11,18 +11,18 @@
 	</div>
     <div class="row nav-profile vertical-align">
        <div class="col-lg-2 col-lg-offset-3">
-                      <img class="list-profile-image img-circle" height="140px" width="140px" data-holder-rendered="true" src="{{posts.0.user.profile_image.url}}"> 
+                      <img class="list-profile-image img-circle" height="140px" width="140px" data-holder-rendered="true" src="{{user.profile_image.url}}"> 
        </div>
        <div class="col-lg-4">
            <blockquote>
-                 <span>{{posts.0.user.nickname}}</span>
+                 <span>{{user.nickname}}</span>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. </p>
            </blockquote>
        </div>
    </div>
 </div>
      <div class="row" id="grid" data-columns>
-      {% for post in posts %}
+      {% for post in user.post_set.all %}
       <div>
             <div class="thumbnail">
                 <a href="{% url "detail" post.id %}">
