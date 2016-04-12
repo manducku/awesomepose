@@ -1,11 +1,16 @@
-from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
+from rest_framework.pagination import PageNumberPagination
 
 from posts.models import Post
+from posts.serializers.post import PostListSerializer
 
 
-class PostListAPIView(APIView):
+class PostSetPagination(PageNumberPagination):
+        page_size = 5
 
-    def get(self, request):
-        posts = [post.title for post in Post.objects.all()]
-        return Response(posts)
+
+class PostListAPIView(ListAPIView):
+        queryset = Post.objects.all()
+        pagination_class = PostSetPagination
+        serializer_class = PostListSerializer
