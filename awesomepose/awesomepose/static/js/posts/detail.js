@@ -97,6 +97,38 @@
             }
     });
 
+    var $detail_like_user = $("#detail-like-user"); 
+    $.ajax({
+            url: "/api/like/"+post_id,
+            type: "GET",
+            success: function(post){
+                if(post.like_user_set.length>5){
+                    $detail_like_user.append(
+                                "<span class=\"detail-user-name\">"+
+                                post.like_user_set.length+
+                                "명이 이 포스트를 좋아합니다"+
+                                "</span>"
+                                );
+                }
+                else{
+                    for (var i=0; i < post.like_user_set.length;i++){
+                        var like_user = post.like_user_set[i];
+                        $detail_like_user.append(
+                                "<a href=\""+
+                                "/"+
+                                "profile/"+
+                                like_user.id+
+                                "\">"+ 
+                                "<span class=\"detail-user-name\">"+
+                                like_user.nickname+
+                                "</span>"+
+                                "</a>"
+                                )
+                    }
+                }
+            }
+    });
+
     var $heart = $(".heart");
 
     $heart.click(function(){

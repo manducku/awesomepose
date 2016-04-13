@@ -10310,4 +10310,8 @@ blockquote > p {
   color: #42A5F5;
 }
 
+.detail-user-name {
+  margin-right: 5px;
+}
+
 /*# sourceMappingURL=application.css.map */
