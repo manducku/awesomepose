@@ -10314,4 +10314,8 @@ blockquote > p {
   margin-right: 5px;
 }
 
+.comment-area {
+  height: 30px;
+}
+
 /*# sourceMappingURL=application.css.map */
