@@ -10302,4 +10302,20 @@ blockquote > p {
   color: inherit;
 }
 
+.heart {
+  cursor: pointer;
+}
+
+.fa-heart:before {
+  color: #42A5F5;
+}
+
+.detail-user-name {
+  margin-right: 5px;
+}
+
+.comment-area {
+  height: 30px;
+}
+
 /*# sourceMappingURL=application.css.map */

@@ -36,7 +36,9 @@ function lastPostFunc()
                             $first_grid.append(
                                     "<div>"+
                                     "<div class=\"thumbnail\">"+
+                                    "<a href=\"posts/"+post.id+"\">"+
                                     "<img class=\"detail-profile-image\" src="+post.image+">"+
+                                    "</a>"+
                                     "<div class=\"row\">"+
                                     "<div class=\"caption\">"+
                                     "<div class=\"col-lg-2\">"+
@@ -56,7 +58,9 @@ function lastPostFunc()
                             $second_grid.append(
                                     "<div>"+
                                     "<div class=\"thumbnail\">"+
+                                    "<a href=\"posts/"+post.id+"\">"+
                                     "<img class=\"detail-profile-image\" src="+post.image+">"+
+                                    "</a>"+
                                     "<div class=\"row\">"+
                                     "<div class=\"caption\">"+
                                     "<div class=\"col-lg-2\">"+
@@ -76,7 +80,9 @@ function lastPostFunc()
                             $third_grid.append(
                                     "<div>"+
                                     "<div class=\"thumbnail\">"+
+                                    "<a href=\"posts/"+post.id+"\">"+
                                     "<img class=\"detail-profile-image\" src="+post.image+">"+
+                                    "</a>"+
                                     "<div class=\"row\">"+
                                     "<div class=\"caption\">"+
                                     "<div class=\"col-lg-2\">"+

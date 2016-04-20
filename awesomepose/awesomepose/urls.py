@@ -45,7 +45,7 @@ urlpatterns = [
 
     url(r'^api/posts/$', PostListAPIView.as_view(), name="api-posts"),
     url(r'^api/posts/(?P<slug>\w+)/$', PostCommentListAPIView.as_view(), name="api-comment-list"),
-
+    url(r'^api/like/(?P<slug>\w+)/$', LikeAPIView.as_view(), name="api-like"),
 
     url(r'^explore/tags/(?P<slug>\w+)/$', TagDetailView.as_view(), name="tag-detail"),
     url(r'^summernote/', include('django_summernote.urls')),
