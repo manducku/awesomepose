@@ -36,7 +36,9 @@
                                         {{post.content|safe}} 
                                 </div>
                            </div>
-
+                        
+                        <!-- tag section -->
+						{% if post.tag_set.all %}
                           <div class= "row">
                             <div class="col-lg-10 col-lg-offset-1">
                                 <p>
@@ -46,21 +48,26 @@
                                 </p>
                             </div>
                         </div>
+						{% endif %}
+                        <!-- end tag -->
 
+                        <!-- like user -->
                         <div class= "row">
                             <div class="col-lg-10 col-lg-offset-1 comment-area">
                                 <p id="detail-like-user">
                                 </p>
                             </div>
                         </div>
+                        <!-- end like user -->
 
-                        
+                        <!-- comment list --> 
                        <div class="row">
                             <div class="col-lg-10 col-lg-offset-1">
                                 <ul class="list-group comment-list" data-post-id="{{post.id}}" data-nickname="{{request.user.nickname}}">
                                </ul>
                             </div>
                        </div>
+                       <!-- end comment --!>
     
                        <div class="row">
                            <div class="col-lg-12">
