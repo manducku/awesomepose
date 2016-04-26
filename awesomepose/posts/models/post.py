@@ -11,7 +11,7 @@ class Post(models.Model):
             )
 
     image = models.ImageField()
-    title = models.TextField(max_length=20)
+    title = models.TextField(max_length=30)
     content = models.TextField()
 
     update_at = models.DateTimeField(
