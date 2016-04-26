@@ -43,3 +43,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+def get_image_filename(instance, filename):
+    title = instance.post.title
+    slug = slugify(title)
+    return "post_images/%s-%s".format(slug, filename)
+
+
+class Images(models.Model):
+    post = models.ForeignKey(Post)
+    image = models.ImageField(upload_to=get_image_filename)

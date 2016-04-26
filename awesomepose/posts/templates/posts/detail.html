@@ -28,7 +28,6 @@
                         </div>
                     </div>
                    </div>
-                        <img class="" src="{{post.image.url}}" alt="">
                 </div>
 
                         <div class="caption">
@@ -51,9 +50,7 @@
 
                         <div class= "row">
                             <div class="col-lg-10 col-lg-offset-1">
-                                <p>
-                                    {{post.content}} 
-                                </p>
+                                    {{post.content|safe}} 
                             </div>
                        </div>
 
