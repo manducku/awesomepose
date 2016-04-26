@@ -13,6 +13,7 @@ class Post(models.Model):
     image = models.ImageField()
     title = models.TextField(max_length=30)
     content = models.TextField()
+    product_url = models.URLField(max_length=255)
 
     update_at = models.DateTimeField(
             auto_now_add=True,
