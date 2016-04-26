@@ -20,8 +20,8 @@ class PostForm(forms.ModelForm):
             Field('title', css_class='form-control'),
             Field('content', css_class='form-control'),
             FormActions(Submit('save', '저장하기', css_class='btn btn-primary'),
-                Button('cancel', 'Cancel', css_class='btn btn-default')
-                ),
+                        Button('cancel', 'Cancel', css_class='btn btn-default')
+                        ),
         )
 
     class Meta:
