@@ -3,43 +3,30 @@
 {% block title %} New Post {% endblock %}
 
 {% block content %}
+{% load staticfiles %}
+<link href="{% static 'css/dropzone.min.css' %}" type="text/css" rel="stylesheet"/>
 
 <div class="row">
-    <div class="col-lg-6 col-lg-offset-3">
-        
+    <div class="col-lg-8 col-lg-offset-2">
+     <form class="form-horizontal" method="POST">    
+         {%csrf_token%}
         <div class="page-header">
             <h1>New Post</h1>
         </div>
+			<div class="form-group">
+              <label for="textArea" class="col-lg-2 control-label create-post-content">title</label>
+				{{form.title}}
+			</div>
 
-        <form acton="" method="post" enctype="multipart/form-data" class="form-horizontal">
-            {% csrf_token %}
-          <fieldset>
-            <div class="form-group">
-              <label for="inputtitle" class="col-lg-2 control-label">Title</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" name="title" id="inputtitle" placeholder="제목을 입력해 주세요">
-              </div>
-            </div>
+			<div>
+				{{form.content}}
+			</div>
 
-            
-            <div class="form-group">
-              <label for="textArea" class="col-lg-2 control-label create-post-content">Content</label>
-              <div class="col-lg-10">
-                <textarea type="text" name="content" class="create-post-content form-control" rows="3" id="inputcontent"></textarea>
-                <span class="help-block">상세 구매 후기를 작성해 주세요.</span>
-              </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                   <div class="row">
-                   <input id="photoCover" class="col-lg-10" type="file" name="image" multiple/>
-                   <button type="submit" class="btn btn-primary btn-sm">등록하기</button>
-                </div>
-            </div>
-          </fieldset>
-        </form>
+   <button type="submit" class="btn btn-primary btn-sm">등록하기</button>
+    </form>
     </div>
 </div>
 
+{% endblock %}
+{% block custom_js %}
 {% endblock %}
