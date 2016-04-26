@@ -4,3 +4,4 @@ django-pipeline
 pillow
 django-summernote
 djangorestframework
+bs4
