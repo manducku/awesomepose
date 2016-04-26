@@ -185,3 +185,16 @@ REST_FRAMEWORK = {
 
 # CRISPY TEMPLATE setting
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Summernote Setting
+SUMMERNOTE_CONFIG = {
+    'width': '100%',
+    'toolbar': [
+        ['style', ['style']],
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['insert', ['link', 'picture']],
+    ],
+    'iframe': False,
+    }
