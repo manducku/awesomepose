@@ -36,6 +36,19 @@
                                         {{post.content|safe}} 
                                 </div>
                            </div>
+
+                        <!-- url section -->
+                        {% if post.product_url %}
+                        <div class= "row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>
+                                <span>구매처:</span> <a href="{{post.product_url}}">{{ post.product_url }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end url section -->
+
+                        {% endif %}
                         
                         <!-- tag section -->
 						{% if post.tag_set.all %}
