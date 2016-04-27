@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
     'django_summernote',
     'rest_framework',
+    'crispy_forms',
 
     'users',
     'posts',
@@ -181,3 +182,19 @@ REST_FRAMEWORK = {
             'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
             'PAGE_SIZE': 20,
                 }
+
+# CRISPY TEMPLATE setting
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Summernote Setting
+SUMMERNOTE_CONFIG = {
+    'width': '100%',
+    'toolbar': [
+        ['style', ['style']],
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['insert', ['link', 'picture']],
+    ],
+    'iframe': False,
+    }

@@ -2,6 +2,7 @@ from django.views.generic import FormView, CreateView
 from django.forms import formset_factory, modelform_factory
 from django.shortcuts import render
 from bs4 import BeautifulSoup
+from crispy_forms.helper import FormHelper
 
 from posts.models import Post
 from posts.forms import PostForm

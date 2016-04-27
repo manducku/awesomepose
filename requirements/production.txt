@@ -5,3 +5,4 @@ pillow
 django-summernote
 djangorestframework
 bs4
+django-crispy-forms
