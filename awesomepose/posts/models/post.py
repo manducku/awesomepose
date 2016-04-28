@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 
 from tags.models import Tag
+from categories.models import Category
 
 
 class Post(models.Model):
@@ -30,6 +31,11 @@ class Post(models.Model):
             settings.AUTH_USER_MODEL,
             related_name="like_post_set",
             through="Like",
+            )
+    category = models.ForeignKey(
+            Category,
+            blank=True,
+            null=True,
             )
 
     def get_absolute_url(self):
