@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'django_summernote',
     'rest_framework',
     'crispy_forms',
+    'mptt',
 
     'users',
     'posts',
     'tags',
+    'categories',
 ]
 
 MIDDLEWARE_CLASSES = [
