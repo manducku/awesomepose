@@ -10318,4 +10318,8 @@ blockquote > p {
   height: 30px;
 }
 
+footer {
+  margin: 5em 0;
+}
+
 /*# sourceMappingURL=application.css.map */
