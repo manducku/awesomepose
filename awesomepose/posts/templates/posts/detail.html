@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load mptt_tags %}
 
 {% block title %} Detail of Post {% endblock %}
 
@@ -11,6 +12,15 @@
                <div class="thumbnail">
                    <div class="row">
                     <div class="caption">
+
+                        <!-- category section -->
+                        {% if post.category %}
+                        <div class="col-lg-10 col-lg-offset-2">
+                        <h5>Category: {{ post.category.get_ancestors|tree_path:">" }} - {{post.category}}</h5>
+                        </div>
+                        {% endif %}
+                        <!-- category end -->
+
                         <div class="col-lg-2">
                             {% if post.user.profile_image %}
 							<a href="{% url "profile" post.user.id %}">
@@ -28,7 +38,7 @@
                         </div>
                     </div>
                    </div>
-                </div>
+               </div>
 
                         <div class="caption">
                             <div class= "row">
