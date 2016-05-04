@@ -5,15 +5,17 @@ module.exports = function(grunt) {
 
         npmConfig: grunt.file.readJSON('package.json'),
         bowerConfig: grunt.file.readJSON('bower.json'),
+		
+	    //background watch 	
+       bgShell: {
+		  _defaults: {
+			bg: true
+			},
+			watchSass: {
+				cmd: 'grunt watchSass'
+			}
+		  }, 
         
-        watch:{
-                files:'awesomepose/static/scss/**/*.scss',
-                tasks:['sass'],
-    			options: {
-                		spawn: false
-            			},
-        }, 
-
         bowercopy: {
             // Bootstrap관련 자바스크립트 파일들을 프로젝트 폴더/js 밑으로 복사
             // Bootstrap관련 폰트 파일들을 프로젝트 폴더/fonts 밑으로 복사
@@ -87,14 +89,26 @@ module.exports = function(grunt) {
               //'css/application.min.css': 'scss/application.scss' // minified 버전
             }]
           }
-        }
+        },
+
+        watch:{
+                files:'awesomepose/static/scss/application.scss',
+                tasks:['sass'],
+    			options: {
+                		spawn: false
+            			},
+        } 
+
     })
 
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-bg-shell');
 
     grunt.registerTask('run-sass', ['bowercopy', 'sass']);
-    grunt.registerTask('watch', ['watch']); 
-};
+    grunt.registerTask('watchSass', ['watch']); 
+    grunt.registerTask('default', ['bgShell:watchSass']);
+
+}
