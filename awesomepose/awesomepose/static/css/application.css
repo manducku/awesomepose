@@ -10340,6 +10340,22 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.jumbotron > .content > .form-group {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.jumbotron > .content > .tags {
+  margin: 15px;
+  font-weight: bolder;
+}
+
+.jumbotron > .content > .tags > a {
+  color: #FFFFFF;
+  margin-left: 5px;
 }
 
 /*# sourceMappingURL=application.css.map */
