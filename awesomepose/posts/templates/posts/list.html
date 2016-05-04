@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+
+{% block jumbotron %}
+{% include "partials/jumbotron.html" %}
+{% endblock %}
+
 {% block title %} post List {% endblock %}
 
 {% block content %}
