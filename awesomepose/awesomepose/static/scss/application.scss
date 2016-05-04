@@ -173,3 +173,40 @@ blockquote > p{
 footer {
     margin: 5em 0;
 }
+
+.jumbotron {
+    position: relative;
+    background: #000 url("https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?crop=entropy&dpr=2&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1300") center center;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    overflow: hidden; 
+}
+
+.jumbotron > .content > h2 {
+    color: #FFFFFF;
+}
+
+.jumbotron > .content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.jumbotron > .content > .form-group {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.jumbotron > .content > .tags {
+    margin: 15px;
+    font-weight: bolder;
+}
+
+.jumbotron > .content > .tags > a {
+    color: #FFFFFF;
+    margin-left: 5px;
+}
+

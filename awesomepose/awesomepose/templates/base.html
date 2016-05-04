@@ -13,8 +13,9 @@
    
   <section class="content">
     {% include "partials/header.html" %}
+    {% block jumbotron %}
+    {% endblock %}
     <div class="container">
-
     {% block content %}
       <div class="page-header" id="banner">
         <div class="row">
