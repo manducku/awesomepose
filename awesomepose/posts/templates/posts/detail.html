@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load mptt_tags %}
 
 {% block title %} Detail of Post {% endblock %}
 
@@ -7,12 +8,29 @@
 
    <div class="page-header" id="banner">
         <div class= "row">
-          <div class = "col-lg-6 col-lg-offset-3">
+          <div class = "col-lg-8 col-lg-offset-2">
                <div class="thumbnail">
                    <div class="row">
                     <div class="caption">
+
+                        <!-- category section -->
+                        {% if post.category %}
+                        <div class="col-lg-10 col-lg-offset-2">
+                        <h5>Category: {{ post.category.get_ancestors|tree_path:">" }} - {{post.category}}</h5>
+                        </div>
+                        {% endif %}
+                        <!-- category end -->
+
                         <div class="col-lg-2">
-                            <img class="detail-profile-image" src="http://placehold.it/50x50"> 
+                            {% if post.user.profile_image %}
+							<a href="{% url "profile" post.user.id %}">
+                                <img class="img-circle detail-profile-image" height="50px" width="50px" src="{{post.user.profile_image.url}}"/> 
+                            </a>
+                            {% else %}
+							<a href="{% url "profile" post.user.id %}">
+                            <img class="img-circle detail-profile-image" height="50px" width="50px" src="http://placehold.it/350x150">
+                            </a>
+                            {% endif %}
                         </div>
                         <div class="col-lg-10">
                             <h4>{{post.title}}</h4>
@@ -20,12 +38,30 @@
                         </div>
                     </div>
                    </div>
-                    <a href="">
-                        <img class="" src="{{post.image.url}}" alt="">
-                   </a>
-                </div>
+               </div>
 
                         <div class="caption">
+                            <div class= "row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                        {{post.content|safe}} 
+                                </div>
+                           </div>
+
+                        <!-- url section -->
+                        {% if post.product_url %}
+                        <div class= "row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>
+                                <span>구매처:</span> <a href="{{post.product_url}}">{{ post.product_url }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end url section -->
+
+                        {% endif %}
+                        
+                        <!-- tag section -->
+						{% if post.tag_set.all %}
                           <div class= "row">
                             <div class="col-lg-10 col-lg-offset-1">
                                 <p>
@@ -35,21 +71,26 @@
                                 </p>
                             </div>
                         </div>
+						{% endif %}
+                        <!-- end tag -->
 
+                        <!-- like user -->
                         <div class= "row">
-                            <div class="col-lg-10 col-lg-offset-1">
-                                <p>
-                                    {{post.content}} 
+                            <div class="col-lg-10 col-lg-offset-1 comment-area">
+                                <p id="detail-like-user">
                                 </p>
                             </div>
-                       </div>
+                        </div>
+                        <!-- end like user -->
 
+                        <!-- comment list --> 
                        <div class="row">
                             <div class="col-lg-10 col-lg-offset-1">
                                 <ul class="list-group comment-list" data-post-id="{{post.id}}" data-nickname="{{request.user.nickname}}">
                                </ul>
                             </div>
                        </div>
+                       <!-- end comment --!>
     
                        <div class="row">
                            <div class="col-lg-12">

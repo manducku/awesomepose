@@ -65,7 +65,7 @@ target/
 .env
 
 #migrations
-migrations/
+**/migrations/
 
 #bower
 bower.*
@@ -100,6 +100,8 @@ awesomepose/awesomepose/static/scss/_bootstrap.scss
 
 #swp
 *.swp
+*.swn
+*.swo
 
 #python social Auth pass
 awesomepose/social/

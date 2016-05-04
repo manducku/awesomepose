@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name="login"),
     url(r'^welcome/$', WelcomeView.as_view(), name="welcome"),
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
+    url(r'^profile/(?P<slug>\w+)/$', ProfileView.as_view(), name="profile"),
 
     url(r'^posts/$', PostListView.as_view(), name="posts"),
     url(r'^posts/new/$', PostCreateView.as_view(), name="post-new"),
@@ -44,7 +45,7 @@ urlpatterns = [
 
     url(r'^api/posts/$', PostListAPIView.as_view(), name="api-posts"),
     url(r'^api/posts/(?P<slug>\w+)/$', PostCommentListAPIView.as_view(), name="api-comment-list"),
-
+    url(r'^api/like/(?P<slug>\w+)/$', LikeAPIView.as_view(), name="api-like"),
 
     url(r'^explore/tags/(?P<slug>\w+)/$', TagDetailView.as_view(), name="tag-detail"),
     url(r'^summernote/', include('django_summernote.urls')),

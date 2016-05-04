@@ -35,6 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     nickname = models.CharField(max_length=15, unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    profile_image = models.ImageField(null=True, blank=True, default="/media/default_profile.png",)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELD = ['email', 'nickname']
     objects = UserManager()

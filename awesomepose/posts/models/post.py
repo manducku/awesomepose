@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 
 from tags.models import Tag
+from categories.models import Category
 
 
 class Post(models.Model):
@@ -11,8 +12,9 @@ class Post(models.Model):
             )
 
     image = models.ImageField()
-    title = models.TextField()
+    title = models.TextField(max_length=30)
     content = models.TextField()
+    product_url = models.URLField(max_length=255)
 
     update_at = models.DateTimeField(
             auto_now_add=True,
@@ -30,6 +32,11 @@ class Post(models.Model):
             related_name="like_post_set",
             through="Like",
             )
+    category = models.ForeignKey(
+            Category,
+            blank=True,
+            null=True,
+            )
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
@@ -43,3 +50,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+def get_image_filename(instance, filename):
+    title = instance.post.title
+    slug = slugify(title)
+    return "post_images/%s-%s".format(slug, filename)
+
+
+class Images(models.Model):
+    post = models.ForeignKey(Post)
+    image = models.ImageField(upload_to=get_image_filename)
