@@ -1,7 +1,14 @@
 from tags.models import Tag
+from bs4 import BeautifulSoup
+import re
 
 
 def get_tag_list(content):
+    soup = BeautifulSoup(content, 'html.parser')
+    content = soup.find_all(string=re.compile("^#"))
+    content = str(content)[2:-2]
+    from IPython import embed
+    embed()
     tag_list = [
             word.replace("#", "")
             for word
